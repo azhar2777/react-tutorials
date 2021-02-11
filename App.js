@@ -25,6 +25,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import ItemDhaba from './screens/ItemDhaba';
 import LoginScreen from './screens/loginscreen';
+import SignupScreen from './screens/registrationscreen';
 
 
 class App extends Component{
@@ -33,7 +34,7 @@ class App extends Component{
   }
   render(){
     return (
-      <LoginScreen />
+      <SignupScreen />
     );
   }
 

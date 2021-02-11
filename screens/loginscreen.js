@@ -52,15 +52,15 @@ import {
 
     render(){
         return (
-
+<SafeAreaView style={{flex:1,}}>
         <ImageBackground  source={require('../images/screen_bg.jpg')} style={loginStyle.mainContainer}>
             <View
-            style={{flexDirection:'column', width:'100%', flex:1, alignSelf:'center', justifyContent:'center',}}
+            style={{backgroundColor:'#bed3ca', flexDirection:'column', width:'100%', flex:1, alignSelf:'center', justifyContent:'center',}}
             >
                 <View
                 style={{
                     height: 90,
-                    backgroundColor:'#0fadad',
+                    backgroundColor:'#e57440',
                     marginHorizontal:20,
                     borderRadius:9,
                     justifyContent:'center'
@@ -68,47 +68,34 @@ import {
 
                 }}
                 >
-                    <Text style={{alignSelf:'center', color:'white'}}>Logo</Text>
+                    <Text style={{alignSelf:'center', color:'white', fontSize:30}}>Put Logo Here</Text>
                 </View>
                 <View style={{ padding: 15, marginTop:30, alignContent:'stretch'}}>
                     <TextInput 
-                    style={{
-                        height:40,
-                        borderColor: '#e5e5e5', 
-                        borderWidth: 1, 
-                        borderRadius:7,
-                        paddingHorizontal:9,
-                    }}
+                    style={loginStyle.inputStyle}
                     keyboardType="email-address"
                     placeholder="Enter email"
                     onChangeText={text => this.handleEmail(text)}
                     />
+                    <View style={{height:20,}} />
                     <TextInput 
-                    style={{
-                        height:40,
-                        borderColor: '#e5e5e5', 
-                        borderWidth: 1, 
-                        borderRadius:7,
-                        paddingHorizontal:9,
-                        marginTop:10,
-                    }}
+                    style={loginStyle.inputStyle}
                     secureTextEntry={true}
                     placeholder="Enter password"
                     onChangeText={text => this.handlePassword(text)}
                     />
-
+<View style={{height:20,}} />
                    <TouchableOpacity
                     activeOpacity={0.5}
                     
                     style={{
-                        height:40,
+                        height:55,
                         width:'100%',
                         backgroundColor: '#c4112c',
                         borderColor: '#c4112c', 
                         borderWidth: 1, 
-                        borderRadius:7,
+                        borderRadius:28,
                         paddingHorizontal:9,
-                        marginTop:10,
                         justifyContent:'center',
                         alignItems:'center',
                     }}
@@ -131,6 +118,7 @@ import {
             </View>
 
         </ImageBackground>
+        </SafeAreaView>
         );
     }
   }
@@ -139,5 +127,13 @@ import {
  
       mainContainer:{
         flex: 1,
-      }
+      },
+      inputStyle : {
+        height:50,
+        borderColor: '#f2efef', 
+        borderWidth: 1, 
+        borderRadius:28,
+        paddingHorizontal:14,
+        backgroundColor:'#FFF'
+    }
   });
