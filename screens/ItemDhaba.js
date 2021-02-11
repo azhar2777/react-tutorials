@@ -25,10 +25,10 @@ export default class ItemDhaba extends Component {
                 </View>
                 <View style={{flexDirection:'column', marginLeft:10,}}>
                     <Text>Apna Dhaba</Text>
-                    <Text>North Indian Food</Text>
-                    <View style={{flexDirection:'row', justifyContent:'space-between'}}>
+                    <Text style={{marginTop:5,}}>North Indian Food</Text>
+                    <View style={{flexDirection:'row', justifyContent:'space-between', alignItems:'center', marginTop:5,}}>
                         <Text>Salt Lake Sec 3</Text>
-                        <Icon name="map-marker-alt"  />
+                        <Icon color="#FFFF00" name="map-marker-alt"  />
                     </View>
                 </View>
                 
@@ -43,9 +43,14 @@ export default class ItemDhaba extends Component {
 const styles = StyleSheet.create({
     mainContainer:{
         flexDirection:'row', marginTop:20, marginHorizontal:10,
+        borderWidth:0.5,
+        borderColor:'#99d4d4d4',
+        borderRadius:9,
+        paddingHorizontal:10,
+        paddingVertical:12,
     },
     imageContainer : {
-        backgroundColor:'white',
+       
         borderColor:'#d3d3d3',
         borderRadius:9,
 
