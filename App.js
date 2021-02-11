@@ -24,6 +24,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import ItemDhaba from './screens/ItemDhaba';
+import LoginScreen from './screens/loginscreen';
 
 
 class App extends Component{
@@ -32,9 +33,7 @@ class App extends Component{
   }
   render(){
     return (
-      <SafeAreaView>
-        <ItemDhaba />
-      </SafeAreaView>
+      <LoginScreen />
     );
   }
 
