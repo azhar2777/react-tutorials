@@ -15,6 +15,7 @@ import {
   
   import  Icon from 'react-native-vector-icons/FontAwesome5';
   import Toast from 'react-native-simple-toast';
+  import loginStyle  from './css/mstyle';
 
 
   export default class SignupScreen extends Component{
@@ -26,6 +27,12 @@ import {
         email:"",
         password:"",
     }
+
+    handleLoginClick(){
+        Toast.show("Go To Login.");
+
+    }
+
     handleName(name){
         this.setState({
             name:name,
@@ -69,7 +76,7 @@ import {
                     
                     
                     <View
-                    style={{backgroundColor:'#bed3ca', flexDirection:'column', width:'100%', flex:1, alignSelf:'center', justifyContent:'center',}}
+                    style={loginStyle.mainContainer2}
                     >
                         
 
@@ -123,17 +130,7 @@ import {
                         <TouchableOpacity
                             activeOpacity={0.5}
                             
-                            style={{
-                                height:55,
-                                width:'100%',
-                                backgroundColor: '#c4112c',
-                                borderColor: '#c4112c', 
-                                borderWidth: 1, 
-                                borderRadius:28,
-                                paddingHorizontal:9,
-                                justifyContent:'center',
-                                alignItems:'center',
-                            }}
+                            style={loginStyle.buttonStyle}
                             onPress= {()=>{
                                 this.handleButtonPressed()
                             }}                   
@@ -146,6 +143,33 @@ import {
                                                 
                                                 >Submit</Text>
                             </TouchableOpacity> 
+                            <View style={{height:20,}} />
+                            <View
+                    style={{flexDirection:'row', alignSelf:'center',}}
+                    >
+                    <Text
+                    
+                    style={{
+                        color:'#000000',
+                       
+                    }}
+                    >Already have an account ?</Text>
+                    <TouchableOpacity
+                        onPress={()=>{
+                            this.handleLoginClick();
+                        }}
+                    >
+                        <Text
+                        
+                        style={{
+                            color:'#FF0000',
+                            alignSelf:'center',
+                            marginLeft:6,
+                        }}
+                        >Login here</Text>
+                    </TouchableOpacity>
+                    
+                    </View>
                             
 
                             
@@ -160,17 +184,4 @@ import {
     }
   }
 
-  const loginStyle = StyleSheet.create({
- 
-      mainContainer:{
-        flex: 1,
-      },
-      inputStyle : {
-        height:50,
-        borderColor: '#f2efef', 
-        borderWidth: 1, 
-        borderRadius:28,
-        paddingHorizontal:14,
-        backgroundColor:'#FFF'
-    }
-  });
+  

@@ -15,7 +15,8 @@ import {
   
   import  Icon from 'react-native-vector-icons/FontAwesome5';
   import Toast from 'react-native-simple-toast';
-
+  import loginStyle  from './css/mstyle';
+  import LinearGradient from 'react-native-linear-gradient';
 
   export default class LoginScreen extends Component{
 
@@ -23,6 +24,11 @@ import {
         isButtonPressed:false,
         email:"",
         password:"",
+    }
+
+    handleSignupClick(){
+        Toast.show("Go To Sign up.");
+
     }
     
     handleEmail(email){
@@ -54,19 +60,12 @@ import {
         return (
 <SafeAreaView style={{flex:1,}}>
         <ImageBackground  source={require('../images/screen_bg.jpg')} style={loginStyle.mainContainer}>
-            <View
-            style={{backgroundColor:'#bed3ca', flexDirection:'column', width:'100%', flex:1, alignSelf:'center', justifyContent:'center',}}
+            <LinearGradient colors={['#499687','#fff', ]}
+            // style={{backgroundColor:'#529599', flexDirection:'column', width:'100%', flex:1, alignSelf:'center', justifyContent:'center',}}
+            style={loginStyle.mainContainer2}
             >
                 <View
-                style={{
-                    height: 90,
-                    backgroundColor:'#e57440',
-                    marginHorizontal:20,
-                    borderRadius:9,
-                    justifyContent:'center'
-
-
-                }}
+                style={loginStyle.logoStyle}
                 >
                     <Text style={{alignSelf:'center', color:'white', fontSize:30}}>Put Logo Here</Text>
                 </View>
@@ -88,17 +87,7 @@ import {
                    <TouchableOpacity
                     activeOpacity={0.5}
                     
-                    style={{
-                        height:55,
-                        width:'100%',
-                        backgroundColor: '#c4112c',
-                        borderColor: '#c4112c', 
-                        borderWidth: 1, 
-                        borderRadius:28,
-                        paddingHorizontal:9,
-                        justifyContent:'center',
-                        alignItems:'center',
-                    }}
+                    style={loginStyle.buttonStyle}
                     onPress= {()=>{
                         this.handleButtonPressed()
                     }}                   
@@ -110,30 +99,43 @@ import {
                           }}              
                                         
                                         >Submit</Text>
-                    </TouchableOpacity> 
+                    </TouchableOpacity>
+                    <View style={{height:20,}} />
+
+                    <View
+                    style={{flexDirection:'row', alignSelf:'center',}}
+                    >
+                    <Text
                     
+                    style={{
+                        color:'#000',
+                       
+                    }}
+                    >Do'nt have an account ?</Text>
+                    <TouchableOpacity
+                        onPress={()=>{
+                            this.handleSignupClick();
+                        }}
+                    >
+                        <Text
+                        
+                        style={{
+                            color:'#FFF',
+                            fontWeight:'bold',
+                            alignSelf:'center',
+                            marginLeft:6,
+                        }}
+                        >Sign up here</Text>
+                    </TouchableOpacity>
+                    
+                    </View>
 
                     
                 </View>
-            </View>
+            </LinearGradient>
 
         </ImageBackground>
         </SafeAreaView>
         );
     }
   }
-
-  const loginStyle = StyleSheet.create({
- 
-      mainContainer:{
-        flex: 1,
-      },
-      inputStyle : {
-        height:50,
-        borderColor: '#f2efef', 
-        borderWidth: 1, 
-        borderRadius:28,
-        paddingHorizontal:14,
-        backgroundColor:'#FFF'
-    }
-  });
