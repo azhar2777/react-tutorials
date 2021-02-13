@@ -16,10 +16,13 @@ import {
   import  Icon from 'react-native-vector-icons/FontAwesome5';
   import Toast from 'react-native-simple-toast';
   import loginStyle  from './css/mstyle';
+  import LinearGradient from 'react-native-linear-gradient';
 
 
   export default class SignupScreen extends Component{
-
+    constructor(){
+        super()
+    }
     state = {
         isButtonPressed:false,
         name:"",
@@ -29,7 +32,7 @@ import {
     }
 
     handleLoginClick(){
-        Toast.show("Go To Login.");
+        this.props.navigation.navigate('Login')
 
     }
 
@@ -74,10 +77,13 @@ import {
             <SafeAreaView style={{flex:1,}}>
                 <ImageBackground  source={require('../images/screen_bg.jpg')} style={loginStyle.mainContainer}>
                     
-                    
-                    <View
+                <LinearGradient colors={['#499687','#ddd', ]}
+            // style={{backgroundColor:'#529599', flexDirection:'column', width:'100%', flex:1, alignSelf:'center', justifyContent:'center',}}
+            style={loginStyle.mainContainer2}
+            >
+                    {/* <View
                     style={loginStyle.mainContainer2}
-                    >
+                    > */}
                         
 
                         <ScrollView>
@@ -175,7 +181,7 @@ import {
                             
                         </View>
                         </ScrollView>
-                    </View>
+                    </LinearGradient>
 
                 </ImageBackground>
             </SafeAreaView>

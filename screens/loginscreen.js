@@ -19,6 +19,9 @@ import {
   import LinearGradient from 'react-native-linear-gradient';
 
   export default class LoginScreen extends Component{
+      constructor(){
+          super()
+      }
 
     state = {
         isButtonPressed:false,
@@ -27,7 +30,8 @@ import {
     }
 
     handleSignupClick(){
-        Toast.show("Go To Sign up.");
+        
+        this.props.navigation.navigate('Signup')
 
     }
     
@@ -60,7 +64,7 @@ import {
         return (
 <SafeAreaView style={{flex:1,}}>
         <ImageBackground  source={require('../images/screen_bg.jpg')} style={loginStyle.mainContainer}>
-            <LinearGradient colors={['#499687','#fff', ]}
+            <LinearGradient colors={['#499687','#ddd', ]}
             // style={{backgroundColor:'#529599', flexDirection:'column', width:'100%', flex:1, alignSelf:'center', justifyContent:'center',}}
             style={loginStyle.mainContainer2}
             >
@@ -83,20 +87,19 @@ import {
                     placeholder="Enter password"
                     onChangeText={text => this.handlePassword(text)}
                     />
-<View style={{height:20,}} />
-                   <TouchableOpacity
+                <View style={{height:20,}} />
+                    <TouchableOpacity
                     activeOpacity={0.5}
-                    
+
                     style={loginStyle.buttonStyle}
                     onPress= {()=>{
                         this.handleButtonPressed()
-                    }}                   
+                    }}
                     >
                     <Text
-                          style={{
+                        style={{
                             color:'#FFFFFF',
-
-                          }}              
+                        }}              
                                         
                                         >Submit</Text>
                     </TouchableOpacity>
