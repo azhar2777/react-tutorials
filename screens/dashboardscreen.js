@@ -43,7 +43,9 @@ export default class DashboardScreen extends Component{
 
           
           <FlatList
+          style={{marginTop:10,}}
           horizontal={true} 
+          showsHorizontalScrollIndicator={false}
           data={this.state.mList}
           keyExtractor={item => item.id}
           renderItem={(item)=>{
@@ -51,7 +53,7 @@ export default class DashboardScreen extends Component{
                   <ItemDashboardList listItem={{item}}  />
           );}}
           ItemSeparatorComponent={()=>{
-              return(<View style={{width:6,}}></View>);
+              return(<View style={{width:8,}}></View>);
           }
               
           }
