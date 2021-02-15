@@ -18,6 +18,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import LoginScreen from './screens/loginscreen';
 import SignupScreen from './screens/registrationscreen';
+import DashboardScreen from './screens/dashboardscreen';
 
 
 
@@ -31,9 +32,10 @@ class App extends Component{
     return (
       // <LoginScreen />
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Login" headerMode="none">
+        <Stack.Navigator initialRouteName="Dashboard" headerMode="none">
         <Stack.Screen  name="Login" component={LoginScreen} />
         <Stack.Screen name="Signup" component={SignupScreen} />
+        <Stack.Screen name="Dashboard" component={DashboardScreen} />
         </Stack.Navigator>
       </NavigationContainer>
 

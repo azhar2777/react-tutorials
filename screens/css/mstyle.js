@@ -43,5 +43,19 @@ export default  loginStyle = StyleSheet.create({
     justifyContent:'center',
     alignItems:'center',
     elevation:3,
+  },
+  // Dashoard Page 
+  // Dashoard Page ends
+
+  dashboardbanner:{
+    
+    borderRadius:12,
+    height:100,
+    marginHorizontal:10,
+    marginTop:20,
+    alignItems:'center',
+    justifyContent:'center',
+    overflow: 'hidden',
   }
 });
+
