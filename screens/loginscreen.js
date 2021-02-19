@@ -50,14 +50,18 @@ export default class LoginScreen extends Component {
 
         var email = this.state.email;
         var password = this.state.password;
-        if (email.trim() == "") {
-            Toast.show('Please enter email');
-            return;
-        }
-        if (password.trim() == '') {
-            Toast.show('Please enter password');
-            return;
-        }
+        // if (email.trim() == "") {
+        //     Toast.show('Please enter email');
+        //     return;
+        // }
+        // if (password.trim() == '') {
+        //     Toast.show('Please enter password');
+        //     return;
+        // }
+
+        this.props.navigation.navigate('Tabs');
+
+
     }
 
     render() {
